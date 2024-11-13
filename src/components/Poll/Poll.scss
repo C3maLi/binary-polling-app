@@ -1,0 +1,30 @@
+.poll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.choice {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &:hover {
+    background-color: #45a049;
+  }
+}
+
+.vs {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+}
