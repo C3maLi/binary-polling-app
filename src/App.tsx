@@ -30,19 +30,16 @@ const App: React.FC = () => {
   const [winner, setWinner] = useState<Choice | null>(null);
 
   const handleVote = (selected: Choice) => {
-    const updatedChoices = choices.filter(
-      (choice) =>
-        choice.id !== currentPair.find((c) => c.id !== selected.id)?.id
-    );
+    setTimeout(() => {
+      if (index < choices.length) {
+        setCurrentPair([selected, choices[index]]);
+        setIndex(index + 1);
+      } else {
+        setWinner(selected);
+      }
+    }, 200);
 
-    if (index < updatedChoices.length) {
-      setCurrentPair([selected, updatedChoices[index]]);
-      setIndex(index + 1);
-    } else {
-      setWinner(selected);
-    }
-
-    setChoices(updatedChoices);
+    setChoices(choices);
   };
 
   return (
